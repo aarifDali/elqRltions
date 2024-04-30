@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
+use App\Models\Post;
+use App\Models\Video;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Route::get('/show', [StudentController::class, 'index']);
 Route::get('/countries', [StudentController::class, 'map']);
@@ -25,3 +25,23 @@ Route::get('/regions', [StudentController::class, 'regions']);
 
 Route::get('/cities', [StudentController::class, 'cities']);
 Route::get('/stores', [StudentController::class, 'stores']);
+
+
+Route::get('/', function() {
+    // // $post = Post::create([
+    // //     'title' => 'Post1'
+    // // ]);
+
+    // $post = Post::find(2);
+    // $post->comments()->create([
+    //     'body' => '2nd comment for Post1'
+    // ]);
+    $video = Video::find(1);
+
+    $video->comments()->create([
+        'body' => '2nd Comment for Video 1'
+    ]);
+
+    
+    // dd($post->comments);
+});
