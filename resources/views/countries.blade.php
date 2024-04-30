@@ -23,6 +23,7 @@
                 <th>Id</th>
                 <th>Country</th>
                 <th>States</th>
+                <th>Cities</th>
             </thead>
             <tbody>
                 @foreach ($countries as $c)
@@ -32,6 +33,11 @@
                         <td>
                         @foreach ($c->states as $state)
                             {{$state->state_name}} <br>
+                        @endforeach
+                        </td>
+                        <td>
+                        @foreach ($c->regions as $region)
+                            {{$region->region_name}} <br>
                         @endforeach
                         </td>
                     </tr>                    

@@ -14,6 +14,6 @@ class Country extends Model
 
     
     public function regions() {
-        return $this->hasOneThrough(Region::class, State::class);
+        return $this->hasManyThrough(Region::class, State::class);
     }
 }

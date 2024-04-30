@@ -22,3 +22,6 @@ Route::get('/show', [StudentController::class, 'index']);
 Route::get('/countries', [StudentController::class, 'map']);
 Route::get('/states', [StudentController::class, 'states']);
 Route::get('/regions', [StudentController::class, 'regions']);
+
+Route::get('/cities', [StudentController::class, 'cities']);
+Route::get('/stores', [StudentController::class, 'stores']);
